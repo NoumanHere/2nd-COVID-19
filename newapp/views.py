@@ -7,6 +7,7 @@ def statistics(request):
     response = requests.get('https://api.covid19api.com/summary')
     data1 = response.json()
     Countries = data1['Countries']
+    Date = data1['Date']
     country_name = {}
     if 'country' in request.GET:
         country_name = request.GET['country']
@@ -27,9 +28,8 @@ def statistics(request):
                 'TotalDeaths':Total_Deaths,
                 'NewDeaths':New_Deaths,
                 'NewRecovered':New_Recovered,
-                'TotalRecovered':Total_Recovered,})
-                return render(request,'Results.html',{
-                'TotalConfirmed':Total_Confirmed
+                'TotalRecovered':Total_Recovered,
+                'Date':Date,
                 })
                 break
         else:
