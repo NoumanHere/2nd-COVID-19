@@ -1,0 +1,30 @@
+{% extends 'corona.html' %}
+{% block content %}
+
+<h2>Statistics in {{ country }}</h2>
+<div style="overflow-x:auto; background:skyblue">
+<table style="background: white," class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Total Confirmed</th>
+      <th scope="col">New Confirmed</th>
+      <th scope="col">Total Deaths</th>
+      <th scope="col">New Deaths</th>
+      <th scope="col">Total Recovered</th>
+      <th scope="col">New Recovered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ TotalConfirmed }}</th>
+      <td>{{ NewConfirmed }}</td>
+      <td>{{ TotalDeaths }}</td>
+      <td>{{ NewDeaths }}</td>
+      <td>{{ TotalRecovered }}</td>
+      <td>{{ NewRecovered }}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+{% endblock %}
